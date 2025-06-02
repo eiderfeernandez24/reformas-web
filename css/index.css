@@ -1,0 +1,1013 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 70px; /* Añadimos espacio superior para que el contenido no quede cubierto por el header */
+}
+
+
+/********************************************************************************************************************************/
+/* Header */
+
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between; /* Mantiene el logo a la izquierda y el espacio para el nav */
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+}
+
+/* Logo */
+header .logo {
+    display: flex;
+    justify-content: flex-start; /* Alinea el logo a la izquierda */
+    align-items: center;
+    margin-left: 80px; /* Empuja el logo de Login/Register a la derecha, pero con un pequeño espacio */
+}
+
+header .logo img {
+    width: 80px;
+    height: auto;
+}
+/* Navegación */
+nav {
+    position: absolute; /* Lo mueve a un lugar independiente */
+    left: 50%; /* Posiciona el nav en el centro horizontal del header */
+    transform: translateX(-50%); /* Lo ajusta al centro exacto */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Centra los elementos dentro de la lista */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 50px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600; 
+    font-size: 16px;
+    padding: 5px 0;
+    display: inline-block;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    color: #5499c7;
+}
+
+/* Hover effect on nav items */
+nav ul li a:focus, nav ul li a:hover {
+    color: #5499c7;
+    border-bottom: 2px solid #5499c7;
+}
+
+
+/* Menu hamburguesa */
+.hamburger {
+    position: absolute;
+    right: 110px;  /* Ajusta la propiedad para moverlo más a la derecha del header *//****************************************************/
+    top: 40%;  /* Centra la hamburguesa verticalmente respecto al header */
+    transform: translateY(-50%);  /* Corrección para centrar completamente */
+    height: 30px;
+    width: 30px;
+    padding: 20px;
+    z-index: 1002;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+
+.hamburger.is-active{
+    background-color:none;
+}
+
+._layer{
+	background:#2c3e50; 
+	margin-bottom:4px;
+	border-radius:2px;
+	width:28px;
+	height:4px;
+	opacity:1;
+	-webkit-transform:translate3d(0, 0, 0);
+	transform:translate3d(0, 0, 0);
+	-webkit-transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+	transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+
+.hamburger:hover .-top{
+	-webkit-transform:translateY(-100%);
+	-ms-transform:translateY(-100%);
+	transform:translateY(-100%);
+}
+.hamburger:hover .-bottom{
+	-webkit-transform:translateY(50%);
+	-ms-transform:translateY(100%);
+	transform:translateY(100%);
+	}
+.hamburger.is-active .-top{
+	-webkit-transform:translateY(200%) rotate(45deg) !important;
+	-ms-transform:translateY(200%) rotate(45deg) !important;
+	transform:translateY(200%) rotate(45deg) !important;
+}
+.hamburger.is-active .-mid{
+	opacity:0;
+}
+.hamburger.is-active .-bottom{
+	-webkit-transform:translateY(-200%) rotate(135deg) !important;
+	-ms-transform:translateY(-200%) rotate(135deg) !important;
+	transform:translateY(-200%) rotate(135deg) !important;
+}
+
+.menuppal.is_active{
+    transform: translate3d(0px, 0px, 0px);
+}
+
+
+
+.menuppal{
+    background-color: rgba(255, 255, 255, 0.95);
+    bottom: 0;
+    height: 100%;
+    right: 50;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    transform: translate3d(0px, -100%, 0px);
+    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+    width: 50%;
+    z-index: 1001;
+    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede el tamaño */
+
+}
+
+.menuppal h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; /* Cambio a Montserrat */
+    color: #2c3e50;
+    font-size: 3rem; /* Aumento de tamaño */
+    line-height: 2.0em; /* Reducción de la altura de línea */
+    font-weight: 700;
+    text-transform: uppercase; /* Transformación de texto */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    margin-top: 80px; /* Reducción del margen superior */
+    margin-bottom: 5px; /* Reducción del espacio debajo del título */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil al texto */
+}
+
+.menuppal p {
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Fuente Arial */
+    color: #2c3e50;
+    font-size: 1.1rem;
+    line-height: 2.0em;
+    margin-top: 0;
+    margin-bottom: -8px;
+}
+
+.menuppal ul {
+    margin: 0;
+    padding: 0;
+}
+
+.menuppal ul li {
+    list-style: none;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Cambio a Roboto */
+    color: #2c3e50;
+    font-size: 1.5rem;
+    line-height: 3em;
+    height: 3em;
+    text-transform: none;
+    font-weight: bold;
+    margin-bottom: -8px; /* Espacio entre párrafos */
+}
+
+.menuppal ul li a {
+    text-decoration: none;
+    display: block; /* Hace que el enlace ocupe toda el área del li */
+    font-size: 1.5rem; /* Igual que el resto de los elementos */
+    line-height: 2.7em;
+    height: 3em;
+    text-transform: none;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif; /* Cambio a Roboto */
+    color: #2c3e50;
+}
+
+.menuppal ul li a:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Estilo para la sección de información de contacto */
+.menuppal .contact-info {
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Fuente Arial */
+    color: #2c3e50;
+}
+
+/* Estilo para los detalles de horario y ubicación */
+.menuppal .contact-info p {
+    font-size: 1rem;
+    line-height: 1.8em;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif; /* Fuente Arial */
+    color: #2c3e50;
+}
+
+
+/* Estilo para el iframe (mapa) */
+.menuppal iframe {
+    width: 800px; /* Aumentamos el ancho */
+    height: 400px; /* Aumentamos la altura */
+    border: none; /* Elimina el borde del iframe */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-top: 50px; /* Espacio por encima */
+}
+
+
+/* Asegura que todo el contenido sea visible en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menuppal {
+        width: 100%; /* El menú ocupa todo el ancho en pantallas pequeñas */
+        transform: translate3d(0px, 0, 0); /* Muestra el menú sin animación de ocultamiento */
+    }
+
+    .menuppal h2 {
+        font-size: 2rem; /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+
+    .menuppal p, .menuppal .contact-info p {
+        font-size: 1.2rem; /* Ajusta el tamaño del texto */
+    }
+
+    .menuppal iframe {
+        height: 200px; /* Ajusta la altura del mapa en pantallas pequeñas */
+    }
+}
+
+
+/* Aplica el color a los iconos */
+.menuppal ul li i, /* Si los iconos son <i> */
+.menuppal ul li span, /* Si los iconos son <span> */
+.menuppal ul li a { 
+    color: #2c3e50; /* Color del icono */
+}
+
+
+/*Para saber en que pagina estoy*/
+.nav-item.active {
+    color: #5499c7;
+    border-bottom: 2px solid #5499c7;
+}
+
+
+
+
+/********************************************************************************************************************************/
+
+/* Imagen principal */
+.hero {
+    position: relative;
+    background-image: url('/imagenes/imagen1.jpg'); /* Cambia esta URL por la de tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 870px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+
+/* Degradado de izquierda a derecha */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
+    z-index: 1;
+    animation: fadeInGradient 1.5s ease-out forwards;
+}
+
+/* Estilo del texto */
+/* Estilo del texto */
+.hero h1 {
+    font-size: 38px;
+    color: #fff;
+    text-align: center;
+    font-family: cursive;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+    margin-bottom: 25px;
+    opacity: 0;
+    transform: translateY(20px);
+    z-index: 2;
+    animation: fadeInText 1.5s ease-out 1s forwards;
+}
+
+/* Animaciones */
+@keyframes fadeInGradient {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/********************************************************************************************************************************/
+
+
+/* Sección Conócenos */
+#conocenos {
+    padding: 80px 20px; /* Espaciado interior */
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+#conocenos h2 {
+    font-family: 'Bitter', serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: #2c3e50; /* Gris oscuro */
+    margin-top: -10px; /* Subir hacia arriba */
+    margin-bottom: 1px;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+
+#conocenos p {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin-top: 25px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    padding: 0 20px;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Contenido de la sección Conócenos */
+#conocenos .intro-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    background-color: #ecf0f1;
+    transition: transform 0.3s ease; /* Transición suave para el movimiento */
+}
+
+/* Efecto de movimiento al pasar el ratón */
+#conocenos .intro-content:hover {
+    transform: translateY(-10px); /* Movimiento hacia arriba */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Sombra más intensa */
+}
+
+/**************************************************************************/
+
+/* Sección Servicios */
+#servicios {
+    background-color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+
+}
+
+/*Titulo*/
+#servicios h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    font-family: 'Bitter', serif;
+
+}
+
+.servicios-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.servicio {
+    background-color: #ecf0f1;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.servicio h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #34495e;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif; /* Cambia por 'Bitter', si prefieres serif */
+}
+
+.servicio p {
+    font-size: 16px;
+    color: #7f8c8d;
+    line-height: 1.6;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+
+/* Efecto hover en los servicios */
+.servicio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.servicio:last-child {
+    margin-right: 0;
+}
+
+/* Responsividad: Móviles y Tablets */
+@media (max-width: 1024px) {
+    .servicios-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #conocenos h2 {
+        font-size: 30px;
+    }
+
+    #conocenos p {
+        font-size: 16px;
+    }
+
+    .servicios-container {
+        grid-template-columns: 1fr;
+    }
+
+    #servicios h2 {
+        font-size: 32px;
+    }
+}
+
+
+/********************************************************************************************************************************/
+/* Estilos para la sección de Servicios */
+.container-servicios {
+    text-align: center;
+    padding: 60px 20px 40px; /* Espaciado superior ajustado */
+    background-color: transparent;
+}
+
+.container-servicios h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #2c3e50; /* Gris oscuro */
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+/* Estilo para las imágenes de los servicios */
+.imagenes-servicios {
+    display: flex;
+    justify-content: space-evenly; /* Espaciado equilibrado entre los items */
+    flex-wrap: wrap;
+    gap: 5px; /* Espacio entre los ítems */
+    margin-top: 80px;
+}
+
+/* Estilo para cada servicio item */
+.servicio-item {
+    text-align: center;
+    width: 180px; /* Ancho fijo para los contenedores */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 8px;
+    transition: transform 0.3s ease; /* Añadimos una transición para el hover */
+    margin-bottom: 5px; /* Menos espacio entre los elementos */
+}
+
+.servicio-item:hover {
+    transform: translateY(-10px); /* Efecto de desplazamiento al pasar el mouse */
+}
+
+/* Estilo de las imágenes */
+.servicio-item img {
+    width: 80px; /* Tamaño de las imágenes */
+    height: 80px;
+    object-fit: contain; /* Aseguramos que la imagen se ajuste */
+    margin-bottom: 20px; /* Menos espacio entre la imagen y el texto */
+}
+
+
+
+/* Estilo del texto debajo de las imágenes */
+.servicio-item p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+/********************************************************************************************************************************/
+/* Sección de Marcas */
+.seccion-marcas {
+    text-align: center;
+    padding: 60px 20px 40px; /* Espaciado superior ajustado */
+    background-color: transparent;
+    border-bottom: 1px solid #ccc;
+}
+
+.seccion-marcas h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #2c3e50; /* Gris oscuro */
+    margin-top: 45px;
+    text-transform: uppercase;
+    font-family: 'Bitter', serif;
+
+}
+
+/* Contenedor de las marcas */
+.contenedor-marcas {
+    display: flex;
+    justify-content: space-evenly; /* Espaciado equilibrado entre los items */
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los ítems */
+    margin-top: 40px; /* Reduje el margen superior para desplazarlo hacia arriba */
+}
+
+/* Estilo de cada marca */
+.marca {
+    display: flex;
+    justify-content: center; /* Centra la imagen dentro del contenedor */
+    align-items: center;
+    width: 150px; /* Ancho fijo para cada marca */
+    height: 150px; /* Altura fija para cada marca */
+    padding: 10px;
+    border-radius: 8px; /* Bordes redondeados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de transición para el hover */
+}
+
+.marca img {
+    width: 100px; /* Tamaño de las imágenes */
+    height: 80px;
+    object-fit: contain; /* Aseguramos que la imagen se ajuste */
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+
+}
+
+/* Estilo para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .contenedor-marcas {
+        flex-direction: column; /* Coloca las marcas en una sola columna */
+        gap: 15px; /* Reducir el espacio entre marcas */
+    }
+
+    .marca {
+        width: 120px; /* Ancho más pequeño para pantallas pequeñas */
+        height: 120px; /* Altura más pequeña */
+    }
+}
+
+
+/***********************************************************************************************/
+/* Calculadora de Presupuesto Estimado */
+
+
+.titulo_presupuesto h2{
+    font-size: 30px;
+    font-weight: 700;
+    color: #2c3e50; 
+    margin-top: 90px;
+    text-transform: uppercase;
+    font-family: 'Bitter', serif;
+    text-align: center;
+}
+
+/* Estilos generales del formulario */
+.right-side form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+    margin-bottom: 80px;
+    margin-top: 25px;
+}
+
+/* Estilos para el formulario al pasar el cursor */
+.right-side form:hover {
+    box-shadow: 0 8px 20px rgba(84, 153, 199, 0.5); /* Color actualizado con tono más fuerte */
+}
+
+
+    
+    /* Estilos para los botones de opción personalizados */
+    .custom-card-select input[type="radio"] {
+        display: none;
+    }
+
+
+    .custom-card-select label {
+    display: inline-block;
+    padding: 15px 25px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 2px solid #d1d8e0;
+    background: #fff; /* Quitado el azul */
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.custom-card-select input[type="radio"]:checked + label {
+    border-color: rgb(177, 137, 86);
+    background: #fff; /* Quitado el azul */
+    color: rgb(177, 137, 86);
+}
+
+.custom-card-select label:hover {
+    background: #f5f5f5; /* Tonalidad suave sin azul */
+    border-color: rgb(177, 137, 86);
+}
+
+
+.centered-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.centered-options input[type="radio"] {
+    display: none;
+}
+
+.centered-options label {
+    display: inline-block;
+    padding: 15px 25px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 2px solid #d1d8e0;
+    background: #fff; /* Quitado el azul */
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.centered-options input[type="radio"]:checked + label {
+    border-color: rgb(177, 137, 86);
+    background: #fff; /* Quitado el azul */
+    color: rgb(177, 137, 86);
+}
+
+.centered-options label:hover {
+    background: #f5f5f5; /* Tonalidad suave sin azul */
+    border-color: rgb(177, 137, 86);
+}
+
+
+
+    
+    /* Estilos para el campo de metros cuadrados */
+    /* Estilos para el campo de metros cuadrados */
+/* Estilos para el campo de metros cuadrados */
+label[for="metros-cuadrados"] {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    font-size: 18px;
+    margin-top: 30px; /* Mueve el label hacia abajo */
+    
+}
+
+
+label[for="tiporeforma"] {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    font-size: 18px;
+}
+
+#metros-cuadrados::placeholder {
+    color: #888; /* Color gris claro para el texto del placeholder */
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+    #metros-cuadrados {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        margin-top: 7px;
+        box-sizing: border-box;
+        transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    #metros-cuadrados:focus {
+        /* box-shadow: 0 0 5px rgba(63, 81, 181, 0.3); */
+        outline: none;
+    }
+    
+    /* Estilos para el botón de envío */
+    button[type="submit"] {
+        background-color: rgb(177, 137, 86);;
+        color: #ffffff;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-sizing: border-box;
+        display: block; /* Cambiado para ser bloque */
+        margin: 0 auto; /* Esto lo centra */
+        text-align: center; /* Centra el texto dentro del botón */
+        margin-top: 5px;
+        font-family: 'Poppins', sans-serif;    
+    
+    }
+    
+    
+    
+    button[type="submit"]:hover {
+        background-color: rgb(177, 137, 86);;
+        /* transform: scale(1.05); */
+    }
+    
+    button[type="submit"]:active {
+        transform: scale(1);
+    }
+    
+
+
+    /* Estilos para el resultado del presupuesto */
+
+    #resultado-presupuesto {
+        background: linear-gradient(135deg, #fffaf0, #f0f8ff);
+        border: 2px solid #5499c7;
+        padding: 25px;
+        border-radius: 15px;
+        width: 70%; /* 👈 Ajusta este valor según lo estrecho que lo quieras */
+        max-width: 800px; /* 👈 Para evitar que se haga demasiado grande en pantallas grandes */
+        margin: 100px auto 80px auto; /* 👈 Centrado + márgenes arriba/abajo */
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.5s ease-in-out;
+    }
+#resultado-presupuesto h3 {
+    color: #2C3E50;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Estilo para el resumen */
+#resultado-presupuesto pre {
+    padding: 15px;
+    border-radius: 5px;
+    font-family: Georgia, serif; /* Cambié la fuente a Georgia */
+    font-size: 18px;
+    color: #333;
+    margin: 0 auto; /* Centra el bloque en su contenedor */
+    margin-left: 200px; /* Desplaza el bloque 20px hacia la derecha */
+    text-align: left; /* Alinea el texto dentro del bloque a la izquierda */
+    max-width: 90%; /* Ajusta el ancho máximo del bloque si es necesario */
+}
+
+
+/* Estilo para los botones */
+#resultado-presupuesto button {
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 1px; /* Reduce el margen superior */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.negrita {
+    font-weight: bold;
+}
+
+
+/* Efecto de hover para los botones */
+#resultado-presupuesto button:hover {
+    background: #2c3e50;
+}
+
+/* Estilo para el botón de descargar PDF */
+#resultado-presupuesto button:first-of-type {
+    margin-right: 10px;
+}
+
+    #resultado-presupuesto button:first-of-type {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    #resultado-presupuesto button:last-of-type {
+        background: #2c3e50;
+        color: white;
+    }
+    
+    #resultado-presupuesto p {
+        font-size: 20px;
+        color: #444;
+        margin-bottom: 18px;
+        font-family: 'Rubik', sans-serif;
+    }
+
+
+    #resultado-presupuesto a button {
+        background-color: #ffbc42;
+        color: red;
+        border: none;
+        padding: 14px 28px;
+        font-size: 17px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(255, 188, 66, 0.5);
+        transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    #resultado-presupuesto a button:hover {
+        background-color: #ffa600;
+        transform: scale(1.05);
+    }
+    
+
+
+    
+      /* Animación de aparición */
+    @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+    }
+/********************************************************************************************************************************/
+
+
+
+
+/********************************************************************************************************************************/
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 30px;
+    background-color: white;
+    font-family: 'Roboto', sans-serif; /* Fuente base */
+    border-top: 1px solid #ccc;
+    flex-wrap: wrap;
+}
+
+.footer-section,
+.footer-section1,
+.enlaces {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 300px;
+    padding: 40px;
+}
+
+/* Títulos del footer */
+.footer h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(177, 137, 86); 
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif; /* Fuente para títulos */
+    letter-spacing: 1px;
+}
+
+/* Párrafos del footer */
+.footer p {
+    display: flex;          /* Añadido: Hace que el <p> sea un contenedor flex */
+    align-items: center;    /* Alinea el icono y el texto verticalmente */
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #2c3e50;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Enlaces del footer */
+.footer a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-family: 'Roboto', sans-serif; /* Fuente limpia y legible */
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: rgb(177, 137, 86); /* Efecto visual al pasar el mouse */
+}
+
+.footer-section i {
+    margin-right: 10px;     /* Espacio entre el icono y el texto */
+    font-size: 16px;        /* Tamaño del icono */
+    color: rgb(177, 137, 86); /* Color del icono */
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-section,
+    .footer-section1,
+    .enlaces {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Quicksand:wght@400;600&display=swap');

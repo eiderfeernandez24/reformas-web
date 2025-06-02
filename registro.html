@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title> Registrarse </title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <a href="index.html">
+        <i class="fa-solid fa-circle-xmark" id="close-icon"></i>
+    </a>
+
+    <div class="container">
+        <div class="content">
+            <div class="left-side">
+                <div class="address details">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="topic">Ubicación</div>
+                    <div class="text-one">Calle Luis I, 86 - 3ª Planta</div>
+                    <div class="text-two">Madrid, España</div>
+                </div>
+                <div class="phone details">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="topic">Teléfonos</div>
+                    <div class="text-one">(+34) 910219854</div>
+                    <div class="text-two">(+34) 658567273</div>
+                </div>
+                <div class="email details">
+                    <i class="fas fa-envelope"></i>
+                    <div class="topic">Email</div>
+                    <div class="text-one"> joyfe@reformasespinosa.com</div>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="topic-text">REGISTRARSE</div>
+                <p>Completa el siguiente formulario para crear una cuenta.</p>
+                <form id="registro-form">
+                    <div class="input-box">
+                        <input type="text" id="nombre" name="nombre" placeholder="Introduce nombre" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" placeholder="Introduce email" id="email" name="email" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="tel" id="telefono" name="telefono" placeholder="Introduce teléfono" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="password" name="password" placeholder="Introduce contraseña" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="terminos">
+                            <input type="checkbox" id="terminos" name="terminos" required>
+                            Acepto los <a href="terminos_uso.html">términos y condiciones</a>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <p>¿Ya tienes cuenta? <a href="login.html">Iniciar sesión</a></p>
+                    </div>
+
+                    <div class="input-box message-box">
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Registrarse" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script>
+    document.getElementById('registro-form').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        // Función para eliminar caracteres peligrosos
+        function sanitizeInput(input) {
+            return input.replace(/[<>'"%;()&+]/g, '').trim();
+        }
+
+        // Obtener valores sanitizados
+        const nombre = sanitizeInput(document.getElementById('nombre').value);
+        const email = sanitizeInput(document.getElementById('email').value);
+        const telefono = sanitizeInput(document.getElementById('telefono').value);
+        const password = sanitizeInput(document.getElementById('password').value);
+
+        const terminos = document.getElementById('terminos').checked;
+        if (!terminos) {
+            alert("Debes aceptar los términos y condiciones.");
+            return;
+        }
+
+        if (!nombre || !email || !telefono || !password) {
+            alert("Por favor, completa todos los campos.");
+            return;
+        }
+
+        // Validación básica de email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("El correo electrónico no es válido.");
+            return;
+        }
+
+        // Enviar los datos a la API en Express
+        fetch('http://127.0.0.1:5000/api/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nombre: nombre,
+                email: email,
+                telefono: telefono,
+                password: password
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(data.message);
+                // Puedes guardar datos del usuario en localStorage si el backend los devuelve
+                if (data.id && data.nombre && data.email) {
+                    localStorage.setItem('usuario', JSON.stringify({
+                        id: data.id,
+                        nombre: data.nombre,
+                        email: data.email
+                    }));
+                }
+                window.location.href = 'index.html'; // Redirigir al usuario
+            } else {
+                alert(data.message || "Hubo un error al registrar el usuario.");
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert("Hubo un error al registrar el usuario.");
+        });
+    });
+</script>
+
+
+</body>
+</html>

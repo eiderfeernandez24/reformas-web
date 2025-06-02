@@ -1,0 +1,590 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto&family=Quicksand&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    background-color: white; /* Color de fondo suave */
+    color: #333;
+    line-height: 1.5;
+    padding-top: 70px;
+    padding-bottom: 100px; /* Más espacio inferior */
+}
+
+
+
+
+/********************************************************************************************************************************/
+/* Header */
+header {
+    background-color: #fff;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between; /* Mantiene el logo a la izquierda y el espacio para el nav */
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+}
+
+/* Logo */
+header .logo {
+    display: flex;
+    justify-content: flex-start; /* Alinea el logo a la izquierda */
+    align-items: center;
+    margin-left: 80px; /* Empuja el logo de Login/Register a la derecha, pero con un pequeño espacio */
+}
+
+header .logo img {
+    width: 80px;
+    height: auto;
+}
+
+/* Navegación */
+nav {
+    position: absolute; /* Lo mueve a un lugar independiente */
+    left: 50%; /* Posiciona el nav en el centro horizontal del header */
+    transform: translateX(-50%); /* Lo ajusta al centro exacto */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Centra los elementos dentro de la lista */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 50px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600; 
+    font-size: 16px;
+    padding: 5px 0;
+    display: inline-block;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    color: #5499c7;
+}
+
+/* Hover effect on nav items */
+nav ul li a:focus, nav ul li a:hover {
+    color: #5499c7;
+    border-bottom: 2px solid #5499c7;
+}
+
+/* Menu hamburguesa */
+.hamburger {
+    position: absolute;
+    right: 110px;  /* Ajusta la propiedad para moverlo más a la derecha del header *//****************************************************/
+    top: 40%;  /* Centra la hamburguesa verticalmente respecto al header */
+    transform: translateY(-50%);  /* Corrección para centrar completamente */
+    height: 30px;
+    width: 30px;
+    padding: 20px;
+    z-index: 1002;
+    cursor: pointer;
+    user-select: none;
+}
+/* Estilo de las capas de la hamburguesa */
+._layer{
+    background:#2c3e50; 
+    margin-bottom:4px;
+    border-radius:2px;
+    width:28px;
+    height:4px;
+    opacity:1;
+    transform:translate3d(0, 0, 0);
+    transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+
+.hamburger.is-active{
+    background-color:none;
+}
+._layer{
+	background:#2c3e50; 
+	margin-bottom:4px;
+	border-radius:2px;
+	width:28px;
+	height:4px;
+	opacity:1;
+	-webkit-transform:translate3d(0, 0, 0);
+	transform:translate3d(0, 0, 0);
+	-webkit-transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+	transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+.hamburger:hover .-top{
+	-webkit-transform:translateY(-100%);
+	-ms-transform:translateY(-100%);
+	transform:translateY(-100%);
+}
+.hamburger:hover .-bottom{
+	-webkit-transform:translateY(50%);
+	-ms-transform:translateY(100%);
+	transform:translateY(100%);
+	}
+.hamburger.is-active .-top{
+	-webkit-transform:translateY(200%) rotate(45deg) !important;
+	-ms-transform:translateY(200%) rotate(45deg) !important;
+	transform:translateY(200%) rotate(45deg) !important;
+}
+.hamburger.is-active .-mid{
+	opacity:0;
+}
+.hamburger.is-active .-bottom{
+	-webkit-transform:translateY(-200%) rotate(135deg) !important;
+	-ms-transform:translateY(-200%) rotate(135deg) !important;
+	transform:translateY(-200%) rotate(135deg) !important;
+}
+
+.menuppal.is_active{
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.menuppal{
+    background-color: rgba(255, 255, 255, 0.95);
+    bottom: 0;
+    height: 100%;
+    right: 50;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    transform: translate3d(0px, -100%, 0px);
+    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+    width: 50%;
+    z-index: 1001;
+    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede el tamaño */
+
+}
+
+.menuppal h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; /* Cambio a Montserrat */
+    color: #2c3e50;
+    font-size: 3rem; /* Aumento de tamaño */
+    line-height: 2.0em; /* Reducción de la altura de línea */
+    font-weight: 700;
+    text-transform: uppercase; /* Transformación de texto */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    margin-top: 80px; /* Reducción del margen superior */
+    margin-bottom: 5px; /* Reducción del espacio debajo del título */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil al texto */
+}
+
+.menuppal p {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    line-height: 2.0em; /* Reducción de la altura de línea */
+    /* font-weight: bold; */
+    margin-top: 0; /* Eliminación del margen superior */
+    margin-bottom: -8px; /* Espacio entre párrafos */
+}
+
+
+
+
+.menuppal ul {
+    margin: 0;
+    padding: 0;
+}
+
+.menuppal ul li {
+    list-style: none;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    line-height: 3em;
+    height: 3em;
+    text-transform: none;
+    font-weight: bold;
+    margin-bottom: -8px; /* Espacio entre párrafos */
+}
+
+.menuppal ul li a {
+    text-decoration: none;
+    display: block; /* Hace que el enlace ocupe toda el área del li */
+    font-size: 1.5rem; /* Igual que el resto de los elementos */
+    line-height: 2.7em;
+    height: 3em;
+    text-transform: none;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+}
+
+.menuppal ul li a:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Estilo para la sección de información de contacto */
+.menuppal .contact-info {
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+}
+
+/* Estilo para los detalles de horario y ubicación */
+.menuppal .contact-info p {
+    font-size: 1rem;
+    line-height: 1.8em;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+}
+
+/* Estilo para el iframe (mapa) */
+.menuppal iframe {
+    width: 800px; /* Aumentamos el ancho */
+    height: 400px; /* Aumentamos la altura */
+    border: none; /* Elimina el borde del iframe */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-top: 50px; /* Espacio por encima */
+}
+
+/* Asegura que todo el contenido sea visible en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menuppal {
+        width: 100%; /* El menú ocupa todo el ancho en pantallas pequeñas */
+        transform: translate3d(0px, 0, 0); /* Muestra el menú sin animación de ocultamiento */
+    }
+
+    .menuppal h2 {
+        font-size: 2rem; /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+
+    .menuppal p, .menuppal .contact-info p {
+        font-size: 1.2rem; /* Ajusta el tamaño del texto */
+    }
+
+    .menuppal iframe {
+        height: 180px; /* Ajusta la altura del mapa en pantallas pequeñas */
+    }
+}
+
+
+/* Aplica el color a los iconos */
+.menuppal ul li i, /* Si los iconos son <i> */
+.menuppal ul li span, /* Si los iconos son <span> */
+.menuppal ul li a { 
+    color: #2c3e50; /* Color del icono */
+}
+
+
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .login-register {
+        margin-left: 0;
+        margin-top: 10px; /* Para dar espacio al ícono en la vista móvil */
+    }
+}
+
+
+
+
+
+
+
+/* Sección de Introducción */
+
+
+/* Sección Intro */
+.intro {
+    text-align: center;
+    padding: 70px 20px 40px;
+    background-color: transparent;
+}
+
+.intro h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #2c3e50; /* Gris oscuro */
+    margin-top: 30px; /* Reduje el margen superior */
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.intro p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 20px; /* Aumenté el espacio entre h2 y p */
+    color: #555;
+}
+
+/* Estilos para la sección de la galería */
+.galeria {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor de la galería */
+.galeria-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 55px; /* Aumento el espacio entre las tarjetas */
+    max-width: 1800px; /* Aumento el tamaño máximo del contenedor */
+    padding: 20px; /* Añadir un poco de espacio alrededor del contenedor */
+}
+
+/* Tarjeta giratoria */
+.flip-card {
+    background-color: transparent;
+    width: 500px; /* Aumento el ancho de la tarjeta */
+    height: 400px; /* Aumento la altura de la tarjeta */
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+/* Asegurarse de que las tarjetas mantengan su tamaño en pantallas grandes */
+@media screen and (max-width: 1600px) {
+    .flip-card {
+        width: 500px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .flip-card {
+        width: 400px;
+        height: 300px;
+    }
+}
+
+
+    
+    /* Interior giratorio */
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+    
+    /* Al hacer clic, gira */
+    .flip-card.flip .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    
+    /* Caras de la tarjeta */
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Imagen visible al frente */
+    .flip-card-front {
+        background-color: #fff;
+    }
+
+    .flip-card-front img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: opacity 0.3s ease, filter 0.3s ease;
+    }
+
+    /* Efecto hover en imagen */
+    .flip-card:hover .flip-card-front img {
+        filter: brightness(0.7);
+        opacity: 0.9;
+    }
+
+
+
+    /* Parte trasera con el texto */
+    .flip-card-back {
+        background-color: #f8f8f8; /* Color de fondo suave */
+        color: #333; /* Color de texto oscuro */
+        transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: normal; /* Cambié a normal para un texto más legible */
+        text-transform: none; /* Quité el capitalizado */
+        border-radius: 10px; /* Bordes redondeados para un look más suave */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para resaltar */
+        transition: transform 0.3s ease-in-out; /* Suaviza la transición */
+        font-family: 'Roboto', sans-serif; /* Aplica la fuente Roboto para el texto general */
+    }
+    
+    /* Título */
+    .flip-card-back h2 {
+        font-size: 1.7rem; /* Título más grande */
+        font-weight: bold;
+        margin-top: 15px;
+        color: #2a2a2a;
+        margin-bottom: 10px; /* Espaciado con el párrafo */
+        font-family: 'Playfair Display', serif; /* Aplica la fuente Playfair Display para el título */
+    }
+    
+    /* Párrafo */
+    .flip-card-back p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 20px; /* Más espacio debajo del párrafo */
+        max-width: 90%; /* Limita el ancho del párrafo */
+        margin-left: auto;
+        margin-right: auto; /* Centra el texto */
+        font-family: 'Bitter', serif; /* Aplica la fuente Bitter para los párrafos */
+    }
+    
+    /* Lista de características */
+    .features {
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    
+    /* Características */
+    .features li {
+        text-align: left;
+        font-size: 1rem;
+        margin-bottom: 8px;
+        width: 100%;
+        font-family: 'Quicksand', sans-serif; /* Aplica la fuente Quicksand para las características */
+    }
+    
+    .features li strong {
+        color: #2a2a2a;
+    }
+    
+    /* Valoración (estrellas) */
+    .rating {
+        font-size: 1.5rem; /* Aumentado el tamaño de las estrellas */
+        color: #f39c12; /* Color dorado para las estrellas */
+        margin-bottom: 20px; /* Espaciado ajustado */
+        font-family: 'Oswald', sans-serif; /* Aplica la fuente Oswald para la valoración */
+    }
+    
+    /* Efecto de hover en la parte trasera para que resalte cuando se pasa el mouse */
+    .flip-card:hover .flip-card-back {
+        transform: rotateY(180deg); /* Asegura que se voltee al hacer hover */
+    }
+
+/* Estilo de cada ítem de la galería (EFECTO ANIMACION) */
+.galeria-item {
+    background-color: #fff;
+    box-sizing: border-box;
+    flex: 1 1 calc(33.333% - 20px); /* 3 por fila con espacio */
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Aumento el radio de los bordes */
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Aumento la sombra */
+    text-align: center;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    position: relative; /* Necesario para que el overlay (capa de oscuridad) funcione correctamente */
+    opacity: 0;
+    transform: translateY(20px);
+
+        display: none;
+
+}
+
+
+/* Efecto de aparición de los ítems de la galería */
+.galeria-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Efecto al pasar el mouse sobre el ítem */
+.galeria-item:hover {
+    transform: translateY(-15px); /* Efecto más pronunciado al pasar el mouse */
+}
+
+/* Imagen dentro de cada ítem */
+.galeria-item img {
+    width: 100%;
+    height: auto;
+    border: none; /* Eliminar el borde */
+    transition: opacity 0.3s ease, filter 0.3s ease; /* Transición para el cambio de brillo */
+}
+
+/* Descripción debajo de cada imagen */
+.galeria-item p {
+    font-size: 18px; /* Aumento el tamaño de la fuente */
+    color: #333;
+    padding: 15px; /* Aumento el padding */
+    margin: 0;
+    background-color: #fff;
+    text-transform: capitalize;
+    
+}
+
+/* Oscurecer la imagen cuando el ratón pasa por encima */
+.galeria-item:hover img {
+    filter: brightness(0.6); /* Oscurecer solo la imagen */
+    opacity: 0.8; /* Le da un pequeño efecto de desvanecimiento */
+}
+
+
+
+/*Para saber en que pagina estoy*/
+.nav-item.active {
+    color: #5499c7;
+    border-bottom: 2px solid #5499c7;
+}

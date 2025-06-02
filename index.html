@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reformas y Construcciones JES</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto&family=Quicksand&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+
+<!-- Encabezado -->
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="/imagenes/logo.JPG" alt="Mi Empresa de Reformas" class="logo-img">
+        </a>
+    </div>
+    
+    <nav>
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-item" id="inicio">Inicio</a></li>
+            <li><a href="galeria_proyectos.html" class="nav-item" id="galeria">Galería de proyectos</a></li>
+            <li><a href="blog.html" class="nav-item" id="blog">Blog</a></li>
+            <li><a href="marcas.html" class="nav-item" id="marcas">Marcas</a></li>
+            <li><a href="contactanos.html" class="nav-item" id="contactanos">Contáctanos</a></li>
+            <li><a href="sobre_nosotros.html" class="nav-item" id="sobre_nosotros">Sobre nosotros</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Redes sociales hamburguesa -->
+        <div class="hamburger">
+            <div class="_layer -top"></div>
+            <div class="_layer -mid"></div>
+            <div class="_layer -bottom"></div>
+        </div>
+        <nav class="menuppal">
+            <h2>Conócenos</h2>
+            <p>Síguenos en nuestras redes sociales</p>
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                <li><a href="registro.html"><i class="fas fa-user"></i></a></li>
+            </ul>
+
+            <div class="contact-info">
+                <p><strong>Horario: </strong>Lunes a Viernes: 9:00 - 18:00</p>
+                <p><strong>Ubicación: </strong>Calle Luis I, 86 - 3ª Planta</p>
+                <div class="menuppal"></div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.5702608377483!2d-3.6522957252678054!3d40.37405215823771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4225cd2a0b26a5%3A0x6328ed3f3a5f2c21!2sCalle%20de%20Luis%20I%2C%2086%2C%20Vallecas%2C%2028031%20Madrid!5e0!3m2!1ses!2ses!4v1744275835134!5m2!1ses!2ses" width="900" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </nav>
+</header>
+
+
+
+<!-- Sección con imagen de fondo  -->
+<section class="hero">
+    <h1>El sitio donde tus reformas se hacen realidad</h1>
+</section>
+
+
+
+
+<!-- Conócenos -->
+<section id="conocenos" class="intro">
+    <div class="intro-content">
+        <h2>JES CONSTRUCCIÓN Y REFORMAS</h2>
+        <p>Con más de 35 años de experiencia en el sector de la construcción, nos especializamos en ofrecer soluciones a medida que transforman ideas en realidad.</p>
+        <p>Te acompañamos en cada paso del proceso, desde el diseño hasta la entrega final, asegurando siempre un servicio completamente personalizado.</p>
+    </div>
+</section>
+
+<!-- Sección servicios -->
+<div class="container-servicios" id="servicios">
+    <h2>EMPRESA DE REFORMAS INTEGRALES</h2>
+    <div class="imagenes-servicios">
+        <div class="servicio-item">
+            <img src="/imagenes/icono-casa.png" alt="Viviendas">
+            <p>VIVIENDAS</p>
+        </div>
+        <div class="servicio-item">
+            <img src="/imagenes/icono-locales.png" alt="Locales Comerciales">
+            <p>LOCALES COMERCIALES</p>
+        </div>
+        <div class="servicio-item">
+            <img src="/imagenes/icono-oficina.png" alt="Oficinas">
+            <p>OFICINAS</p>
+        </div>
+        <div class="servicio-item">
+            <img src="/imagenes/icono-edificio.png" alt="Edificios">
+            <p>EDIFICIOS</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Servicios -->
+<section id="servicios" class="servicios">
+    <h2>¿Por qué elegirnos?</h2>
+    <div class="servicios-container">
+        <div class="servicio">
+            <h3>Asesoramiento Personalizado</h3>
+            <p>Ofrecemos un asesoramiento 100% adaptado a tus necesidades y visión, trabajando juntos para crear un proyecto único.</p>
+        </div>
+        <div class="servicio">
+            <h3>Diseño Innovador</h3>
+            <p>Transformamos tus ideas en planos detallados y presentaciones 3D, para que puedas visualizar tu futuro espacio antes de que empiece la obra.</p>
+        </div>
+        <div class="servicio">
+            <h3>Presupuesto Real</h3>
+            <p>Te proporcionamos un presupuesto claro y transparente desde el inicio, asegurando que cada detalle esté incluido.</p>
+        </div>
+        <div class="servicio">
+            <h3>Compromiso con los Plazos</h3>
+            <p>Nos comprometemos a entregar cada proyecto en el tiempo acordado, con un seguimiento continuo para garantizar el cumplimiento de los plazos.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Marcas con las que trabajamos  -->
+
+<section id="marcas" class="seccion-marcas">
+    <h2>MARCAS CON LAS QUE TRABAJAMOS</h2>
+    <div class="contenedor-marcas">
+        <div class="marca">
+            <a href="https://www.saltoki.com/" target="_blank" rel="noopener noreferrer">
+                <img src="/imagenes/saltoki.jpg" alt="Marca Saltoki">
+            </a>
+        </div>
+
+        <div class="marca">
+            <a href="https://www.geotiles.com/" target="_blank" rel="noopener noreferrer">
+            <img src="/imagenes/geotiles.png" alt="Marca 4">
+            </a>
+        </div>
+
+        <div class="marca">
+            <a href="https://www.roca.es/" target="_blank" rel="noopener noreferrer">
+            <img src="/imagenes/roca.png" alt="Marca 1">
+            </a>
+        </div>
+
+        <div class="marca">
+            <a href="https://honnun.es/" target="_blank" rel="noopener noreferrer">
+            <img src="/imagenes/honnun.png" alt="Marca 3">
+            </a>
+        </div>
+
+        <div class="marca">
+            <a href="https://www.cosmicbrand.com/?srsltid=AfmBOor2rNJ4bwD0VUX81QV7CNZwNaoU3OdeymaJHRmp5m8b4Mp_c7iO">
+            <img src="/imagenes/cosmic.jpg" alt="Marca 1">
+            </a>
+        </div>
+
+        <div class="marca">
+            <a href="https://www.levantina.com/producto/marmol/">
+                <img src="/imagenes/LEVANTINA_logo.webp" alt="Marca 2">
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- Calculadora de Presupuesto Estimado -->
+
+<div class="titulo_presupuesto">
+    <h2>Calcule su Presupuesto Estimado</h2>
+</div>
+
+
+<div class="right-side">
+    <form id="presupuestoForm" action="#"> 
+        <label for="tiporeforma">Escoge el tipo de reforma:</label>
+        <div class="custom-card-select">
+            <input type="radio" id="cocina" name="tiporeforma" value="Cocina" required>
+            <label for="cocina">🍳 Cocina</label>
+
+            <input type="radio" id="baño" name="tiporeforma" value="Baño">
+            <label for="baño">🛁 Baño</label>
+
+            <input type="radio" id="salones" name="tiporeforma" value="Salón">
+            <label for="salones">🛋️ Salones y comedores</label>
+
+            <input type="radio" id="dormitorio" name="tiporeforma" value="Dormitorio">
+            <label for="dormitorio">🛏️ Dormitorio</label>
+
+            <div class="centered-options">
+                <div>
+                    <input type="radio" id="exteriores" name="tiporeforma" value="Exteriores">
+                    <label for="exteriores">🌿 Exteriores</label>
+                </div>
+                <div>
+                    <input type="radio" id="oficina" name="tiporeforma" value="Oficina">
+                    <label for="oficina">💼 Oficina</label>
+                </div>
+            </div>
+        </div>
+
+        <label for="metros-cuadrados">Introduce los metros cuadrados:</label>
+        <input type="number" id="metros-cuadrados" placeholder="Metros cuadrados" min="1" required>
+
+        <button type="submit">Calcular Presupuesto</button>
+    </form>
+
+    <!-- Resultado del presupuesto -->
+    <div id="resultado-presupuesto" style="display: none; margin-top: 20px; background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
+        <!-- Este contenido lo llenará el JS dinámicamente -->
+    </div>
+</div>
+
+
+
+
+<!-- Footer  -->
+<footer class="footer">
+
+    <div class="enlaces">
+        <h3>Enlaces de Interés</h3>
+        <a href="galeria_proyectos.html" class="nav-item" id="galeria">Galería de proyectos</a>
+        <a href="marcas.html" class="nav-item" id="marcas">Marcas</a>
+        <a href="contactanos.html" class="nav-item" id="contactanos">Contáctanos</a>
+    </div>
+
+    <div class="footer-section">
+        <h3>Contacto</h3>
+        <p><i class="fas fa-building"></i>JES Construcciones y Reformas</p>
+        <p><i class="fas fa-envelope"></i>espinosa@reformasespinosa.com</p>
+        <p><i class="fas fa-map-marker-alt"></i>Calle Luis I, 86 - 3ª Planta, Madrid, España</p>
+        <p><i class="fas fa-phone-alt"></i>(+34) 910219854</p>
+        <p><i class="fas fa-phone-alt"></i>(+34) 658567273</p>
+    </div>
+    
+
+    <div class="footer-section1">
+    <h3>Páginas Legales</h3>
+    <p><a href="politica_privacidad.html">Política de Privacidad</a></p>
+    <p><a href="terminos_uso.html">Términos de Uso</a></p>
+    </div>
+
+</footer> 
+
+
+
+<script src="js/galeria.js"></script>
+<script src="js/calcula_presupuesto.js"></script>
+<script src="js/desplegable.js"></script>
+<script src="js/activarenlace.js"></script>
+<script src="js/pdf_reforma.js"></script>
+
+
+</body>
+
+</html>
