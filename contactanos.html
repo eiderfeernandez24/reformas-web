@@ -6,8 +6,6 @@
     <title>Formulario de Contacto - Reformas</title>
     <link rel="stylesheet" href="css/contactanos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/25/25694.png" />
-
 </head>
 <body>
 
@@ -15,144 +13,149 @@
         <i class="fa-solid fa-circle-xmark" id="close-icon"></i>
     </a>
 
-
     <div class="container">
         <div class="content">
-        <div class="left-side">
-            <div class="address details">
-                <i class="fas fa-map-marker-alt"></i>
-                <div class="topic">Ubicación</div>
-                <div class="text-one">Calle Luis I, 86 - 3ª Planta</div>
-                <div class="text-two">Madrid, España</div>
-            </div>
-            <div class="phone details">
-            <i class="fas fa-phone-alt"></i>
-                <div class="topic">Teléfonos</div>
-                <div class="text-one">(+34) 910 219 854</div>
-                <div class="text-two">(+34) 658 567 273</div>
-            </div>
-            <div class="email details">
-                <i class="fas fa-envelope"></i>
-                <div class="topic">Email</div>
-                <div class="text-one"> espinosa@reformasespinosa.com</div>
-            </div>
-        </div>
-
-    
-        <div class="right-side">
-        <h2 id="titulo-reforma">SOLICITA TU REFORMA</h2>
-        <p>Solicita información sobre nuestros servicios sin ningún compromiso</p>
-
-        <form id="reforma-form" enctype="multipart/form-data">
-            <div class="input-box">
-                <input type="text" id="nombre" name="nombre" placeholder="Introduce nombre" required>
-            </div>
-            <div class="input-box">
-                <input type="text" placeholder="Introduce email" id="email" name="email" required>
-            </div>
-            <div class="input-box">
-                <input type="telefono" id="telefono" name="telefono" placeholder="Introduce teléfono" required>
-            </div>
-            <div class="input-box">
-                <input type="text" id="direccion" name="direccion" placeholder="Introduce dirección de la reforma" required>
-            </div>
-
-            <div class="custom-card-select">
-                <input type="radio" id="cocina" name="tiporeforma" value="cocina" required>
-                <label for="cocina">🍳 Cocina</label>
-
-                <input type="radio" id="baño" name="tiporeforma" value="baño" required>
-                <label for="baño">🛁 Baño</label>
-
-                <input type="radio" id="dormitorio" name="tiporeforma" value="dormitorio">
-                <label for="dormitorio">🛏️ Dormitorio</label>
-
-                <input type="radio" id="salones" name="tiporeforma" value="salones_comedores">
-                <label for="salones">🛋️ Salones y comedores</label>
-
-                <input type="radio" id="exteriores" name="tiporeforma" value="exteriores">
-                <label for="exteriores">🌿 Exteriores</label>
-
-                <input type="radio" id="oficina" name="tiporeforma" value="oficina">
-                <label for="oficina">💼 Oficina</label>
-            </div>
-
-
-            <div class="form-group">
-                <div class="input-box message-box">
-                    <textarea id="descripcion" name="descripcion" rows="4" required placeholder="Haz una breve descripción sobre el proyecto"></textarea>
+            <div class="left-side">
+                <div class="address details">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="topic">Ubicación</div>
+                    <div class="text-one">Calle Luis I, 86 - 3ª Planta</div>
+                    <div class="text-two">Madrid, España</div>
+                </div>
+                <div class="phone details">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="topic">Teléfonos</div>
+                    <div class="text-one">(+34) 910 219 854</div>
+                    <div class="text-two">(+34) 658 567 273</div>
+                </div>
+                <div class="email details">
+                    <i class="fas fa-envelope"></i>
+                    <div class="topic">Email</div>
+                    <div class="text-one">espinosa@reformasespinosa.com</div>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="fecha-cita">Selecciona la fecha y hora de tu cita:</label>
-                <input type="text" id="fecha-cita" name="fecha-cita" required>
-            </div>
-            
-            <div class="form-group-seleted">
-                    <div class="input-box-selected" style="height: auto;">
-                    <label for="imagenes" class="upload-label">
-                        <span class="upload-btn-text">Seleccionar imágenes</span>
-                        <input 
-                        type="file" 
-                        id="imagenes" 
-                        name="imagenes[]" 
-                        accept="image/*" 
-                        multiple 
-                        required 
-                        class="upload-input"
-                        >
-                    </label>
+            <div class="right-side">
+                <h2 id="titulo-reforma">SOLICITA TU REFORMA</h2>
+                <p>Solicita información sobre nuestros servicios sin ningún compromiso</p>
+
+                <form id="reforma-form" enctype="multipart/form-data">
+                    <div class="input-box">
+                        <input type="text" id="nombre" name="nombre" placeholder="Introduce nombre" required>
                     </div>
-                
-                    <!-- Aquí aparecerán las previsualizaciones -->
-                    <div class="preview-container" id="preview"></div>
-                </div>
-            
-            <div class="form-group">
-                <label for="privacidad" style="font-weight: normal;">
-                    <input type="checkbox" id="privacidad" name="privacidad" required>
-                Acepto los <a href="terminos_uso.html">términos y condiciones</a> además del tratamiento de mis datos personales.
-                </label>
+                    <div class="input-box">
+                        <input 
+                            type="email" 
+                            placeholder="Introduce email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            title="Añade @ y un dominio, por ejemplo ejemplo@correo.com"
+                            oninvalid="this.setCustomValidity('Por favor, incluye un correo válido con @ y dominio')" 
+                            oninput="setCustomValidity('')"
+                        >
+                    </div>
+                    <div class="input-box">
+                        <input 
+                            type="tel" 
+                            id="telefono" 
+                            name="telefono" 
+                            placeholder="Introduce teléfono" 
+                            required 
+                            pattern="\d{9}" 
+                            maxlength="9" 
+                            inputmode="numeric" 
+                            title="Máximo 9 números"
+                        >
+                    </div>
+                    <div class="input-box">
+                        <input type="text" id="direccion" name="direccion" placeholder="Introduce dirección de la reforma" required>
+                    </div>
+
+                    <div class="custom-card-select">
+                        <input type="radio" id="cocina" name="tiporeforma" value="cocina" required>
+                        <label for="cocina">🍳 Cocina</label>
+
+                        <input type="radio" id="baño" name="tiporeforma" value="baño" required>
+                        <label for="baño">🛁 Baño</label>
+
+                        <input type="radio" id="dormitorio" name="tiporeforma" value="dormitorio">
+                        <label for="dormitorio">🛏️ Dormitorio</label>
+
+                        <input type="radio" id="salones" name="tiporeforma" value="salones_comedores">
+                        <label for="salones">🛋️ Salones y comedores</label>
+
+                        <input type="radio" id="exteriores" name="tiporeforma" value="exteriores">
+                        <label for="exteriores">🌿 Exteriores</label>
+
+                        <input type="radio" id="oficina" name="tiporeforma" value="oficina">
+                        <label for="oficina">💼 Oficina</label>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-box message-box">
+                            <textarea id="descripcion" name="descripcion" rows="4" required placeholder="Haz una breve descripción sobre el proyecto"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha-cita">Selecciona la fecha y hora de tu cita:</label>
+                        <input type="text" id="fecha-cita" name="fecha-cita" required>
+                    </div>
+                    
+                    <div class="form-group-seleted">
+                        <div class="input-box-selected" style="height: auto;">
+                            <label for="imagenes" class="upload-label">
+                                <span class="upload-btn-text">Seleccionar imágenes</span>
+                                <input 
+                                    type="file" 
+                                    id="imagenes" 
+                                    name="imagenes[]" 
+                                    accept="image/*" 
+                                    multiple 
+                                    required 
+                                    class="upload-input"
+                                >
+                            </label>
+                        </div>
+                        <div class="preview-container" id="preview"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="privacidad" style="font-weight: normal;">
+                            <input type="checkbox" id="privacidad" name="privacidad" required>
+                            Acepto los <a href="terminos_uso.html">términos y condiciones</a> además del tratamiento de mis datos personales.
+                        </label>
+                    </div>
+
+                    <div class="button">
+                        <input type="submit" value="Enviar proyecto">
+                    </div>
+                </form>
             </div>
-    
-            <div class="input-box message-box">
-            
-            </div>
-
-
-            <div class="button">
-                <input type="submit" value="Enviar proyecto">
-            </div>
-
-
-        </form>
-        </div>
         </div>
     </div>
-
-    
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const usuario = JSON.parse(localStorage.getItem('usuario'));
     const titulo = document.getElementById('titulo-reforma');
 
-    // Mostrar el saludo personalizado si hay usuario
     if (usuario && usuario.nombre) {
         titulo.textContent = `Hola ${usuario.nombre}, solicita tu reforma`;
     }
 
-    // Función para sanitizar texto
     function sanitizeInput(input) {
         return input.replace(/[<>'"%;()&+]/g, '').trim();
     }
 
-    // Evento al enviar el formulario
+    document.getElementById('telefono').addEventListener('input', function (e) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
     document.getElementById('reforma-form').addEventListener('submit', async function (event) {
         event.preventDefault();
 
-        // Sanitizar campos
         const nombre = sanitizeInput(document.getElementById('nombre').value);
         const email = sanitizeInput(document.getElementById('email').value);
         const telefono = sanitizeInput(document.getElementById('telefono').value);
@@ -165,6 +168,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!nombre || !email || !telefono || !direccion || !descripcion || !tipoReforma || !privacidad || !fechaCita) {
             alert("Por favor, completa todos los campos y acepta los términos.");
+            return;
+        }
+
+        if (!/^\d{9}$/.test(telefono)) {
+            alert("El teléfono debe contener exactamente 9 dígitos numéricos.");
+            return;
+        }
+
+        if (!/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+            alert("Introduce un email válido con @ y dominio.");
             return;
         }
 
@@ -207,7 +220,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Calendario de citas
     flatpickr("#fecha-cita", {
         enableTime: true,
         dateFormat: "Y-m-d H:i",
@@ -217,15 +229,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-
-
-
-
-
 <script src="js/opcionescontactanos.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="js/calendario.js"></script>
-    
 </body>
 </html>

@@ -154,8 +154,13 @@
 }
 
 .right-side .button {
-    margin-top: -110px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px; /* ajusta según tu necesidad */
 }
+
 
 .right-side .button input[type="button"] {
     color: #fff;
